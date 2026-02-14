@@ -1,0 +1,128 @@
+.page-home {
+    /* Page specific styles if any */
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ccc;
+    background-image: url("https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&q=80&w=2000");
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+    gap: 2rem;
+    color: #fff;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Featured Collections */
+.featured-section {
+    padding: 6rem 2rem;
+}
+
+.featured-title {
+    margin-bottom: 3rem;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Brand Section */
+.brand-section {
+    background: #121212;
+    color: #fff;
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.brand-title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #D4FF00;
+}
+
+.brand-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #ccc;
+}
+
+/* New Arrivals */
+.arrivals-section {
+    padding: 4rem 2rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+}
+
+.product-grid-home {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Curated Collections */
+.curated-section {
+    padding: 4rem 2rem;
+    background: #f5f5f5;
+    border-radius: 16px;
+    margin-bottom: 4rem;
+}
+
+.curated-title {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.curated-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}

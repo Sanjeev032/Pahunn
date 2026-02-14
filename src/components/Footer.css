@@ -1,0 +1,120 @@
+.footer {
+    padding: 4rem 0 2rem;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.footer__container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer__col h3 {
+    color: var(--color-text-light);
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+}
+
+/* Brand Column */
+.footer__logo {
+    color: var(--color-text-light);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.footer__desc {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.footer__socials {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer__socials a {
+    color: var(--color-text-light);
+    transition: color 0.3s ease;
+}
+
+.footer__socials a:hover {
+    color: var(--color-accent);
+}
+
+/* Links */
+.footer__col ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer__col ul a {
+    transition: color 0.3s ease;
+}
+
+.footer__col ul a:hover {
+    color: var(--color-text-light);
+}
+
+/* Newsletter */
+.newsletter-form {
+    display: flex;
+    border-bottom: 1px solid #444;
+    padding: 0.5rem 0;
+    margin-top: 1rem;
+}
+
+.newsletter-form input {
+    background: transparent;
+    border: none;
+    flex: 1;
+    color: var(--color-text-light);
+    font-family: var(--font-body);
+    outline: none;
+}
+
+.newsletter-form button {
+    color: var(--color-accent);
+    transition: transform 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    transform: translateX(4px);
+}
+
+/* Bottom */
+.footer__bottom {
+    border-top: 1px solid #222;
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__legal {
+    display: flex;
+    gap: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .footer__container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .footer__container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer__bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}

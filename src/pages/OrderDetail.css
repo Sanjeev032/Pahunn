@@ -1,0 +1,246 @@
+.page-order-detail {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+.order-detail-header {
+    margin-bottom: 2rem;
+}
+
+.back-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+    margin-bottom: 1rem;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    color: var(--primary-color);
+}
+
+.order-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.order-meta h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.status-badge.paid,
+.status-badge.delivered {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.status-badge.pending_payment {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.status-badge.cancelled,
+.status-badge.refunded {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.order-date {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* Timeline */
+.order-timeline {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    position: relative;
+    padding: 0 1rem;
+}
+
+.order-timeline::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 2rem;
+    right: 2rem;
+    height: 2px;
+    background: #e5e5e5;
+    z-index: 0;
+}
+
+.timeline-step {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background: #fff;
+    padding: 0 0.5rem;
+}
+
+.step-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+    border: 2px solid #fff;
+}
+
+.timeline-step.active .step-icon {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.step-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #9ca3af;
+}
+
+.timeline-step.active .step-label {
+    color: var(--primary-color);
+}
+
+/* Grid */
+.order-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .order-content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .order-timeline {
+        overflow-x: auto;
+        padding-bottom: 1rem;
+    }
+}
+
+.order-items-section,
+.order-summary-section {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.order-item-row {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.order-item-row img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.item-info {
+    flex: 1;
+}
+
+.item-info h3 {
+    font-size: 1rem;
+    margin: 0 0 0.25rem 0;
+}
+
+.item-info p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+.item-qty {
+    color: #666;
+}
+
+.item-price {
+    font-weight: 600;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.summary-row.total {
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #000;
+}
+
+.shipping-address {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.shipping-address h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.shipping-address p {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.cancel-btn {
+    margin-top: 1.5rem;
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+.cancel-btn:hover {
+    background-color: #fef2f2;
+}
+
+.cancelled-banner {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}

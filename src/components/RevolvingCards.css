@@ -1,0 +1,155 @@
+.revolving-section {
+    padding: 5rem 0;
+    background-color: var(--color-bg-dark);
+    /* Dark background for neon/glass contrast */
+    color: var(--color-text-light);
+    overflow: hidden;
+    perspective: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 600px;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    text-align: center;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--color-accent);
+}
+
+.carousel-container {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.carousel-spinner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+    --radius: 300px;
+}
+
+.carousel-item {
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    left: 5%;
+    top: 0;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    backface-visibility: hidden;
+    /* Or visible depending on desired effect, usually hidden for single sided */
+    backface-visibility: visible;
+}
+
+/* Glassmorphism Highlight */
+.glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: skewX(-25deg);
+    pointer-events: none;
+}
+
+.card-image {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item:hover .card-image {
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 1.5rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.card-content h3 {
+    color: var(--color-accent);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.btn-shop {
+    background: transparent;
+    border: 1px solid var(--color-text-light);
+    color: var(--color-text-light);
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-shop:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-bg-dark);
+}
+
+.carousel-controls {
+    margin-top: 4rem;
+    display: flex;
+    gap: 2rem;
+    z-index: 10;
+}
+
+.carousel-controls button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.carousel-controls button:hover {
+    background: var(--color-accent);
+    color: var(--color-bg-dark);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .carousel-container {
+        width: 260px;
+        height: 350px;
+    }
+
+    .carousel-spinner {
+        --radius: 150px;
+    }
+
+    /* .carousel-item transform is now handled by JS utilizing the CSS variable */
+}

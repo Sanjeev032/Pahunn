@@ -1,0 +1,158 @@
+.filter-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    padding-right: 2rem;
+    border-right: 1px solid var(--color-border);
+    height: fit-content;
+}
+
+.filter-section {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1.5rem;
+}
+
+.filter-section:last-child {
+    border-bottom: none;
+}
+
+.filter-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: var(--color-text);
+}
+
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.filter-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--color-text-grey);
+}
+
+.filter-checkbox input {
+    display: none;
+}
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.filter-checkbox:hover .checkmark {
+    border-color: var(--color-text);
+}
+
+.filter-checkbox input:checked+.checkmark {
+    background-color: var(--color-bg-dark);
+    border-color: var(--color-bg-dark);
+}
+
+.filter-checkbox input:checked+.checkmark::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 5px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.filter-sidebar__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.filter-overlay {
+    display: none;
+}
+
+.mobile-only {
+    display: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .filter-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 100vh;
+        background-color: var(--color-bg);
+        z-index: 2000;
+        padding: 0;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        overflow-y: auto;
+        border-right: none;
+        box-shadow: var(--shadow-lg);
+    }
+
+    .filter-sidebar.open {
+        transform: translateX(0);
+    }
+
+    .filter-section {
+        padding: 1.5rem;
+        padding-top: 0;
+        margin-bottom: 0;
+    }
+
+    .mobile-only {
+        display: flex;
+    }
+
+    .filter-overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1999;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+
+    .filter-overlay.visible {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}

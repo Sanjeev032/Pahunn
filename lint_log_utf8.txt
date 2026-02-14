@@ -1,0 +1,27 @@
+﻿
+> pahunn@0.0.0 lint
+> eslint .
+
+
+C:\Users\sanje\OneDrive\Desktop\pahunn\src\components\ProductCard.jsx
+  6:20  error  'price' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\sanje\OneDrive\Desktop\pahunn\src\components\SearchModal.jsx
+  15:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  13 |         if (query.length > 2) {
+  14 |             // Simulate API call
+> 15 |             setResults([
+     |             ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  16 |                 { id: 1, title: 'Utility Cargo Pants', price: 4500, image: 'https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&q=80&w=200' },
+  17 |                 { id: 2, title: 'Oversized Black Hoodie', price: 3200, image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&q=80&w=200' },
+  18 |             ]);  react-hooks/set-state-in-effect
+
+Γ£û 2 problems (2 errors, 0 warnings)
+

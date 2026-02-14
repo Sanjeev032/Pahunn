@@ -1,0 +1,46 @@
+/* The stage/container that gives depth */
+.intro-stage {
+    perspective: 1500px;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: #000;
+    /* Start dark for dramatic effect */
+}
+
+/* The content that flies in */
+.intro-content {
+    width: 100%;
+    min-height: 100vh;
+    transform-origin: center bottom;
+    animation: flyInCarpet 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    background-color: var(--color-bg);
+    /* Ensure content has bg so it looks like a card/carpet */
+    border-radius: 0 0 0 0;
+    /* Starts maybe rounded? */
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes flyInCarpet {
+    0% {
+        opacity: 0;
+        transform:
+            translateY(120vh) rotateX(70deg) scale(0.6);
+        border-radius: 50px;
+        /* Looks more object-like initially */
+    }
+
+    40% {
+        opacity: 1;
+        border-radius: 20px;
+    }
+
+    100% {
+        opacity: 1;
+        transform:
+            translateY(0) rotateX(0deg) scale(1);
+        border-radius: 0;
+    }
+}
+
+/* Optional: Add a 'cloud' or glow effect below it? */
